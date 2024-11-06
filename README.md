@@ -4,4 +4,4 @@
 MVP player will be chosen after final round end.
 
 ## Installation
-- Simply drag all content in zip file into ``addons/counterstrikesharp/plugins/
+- Simply drag all content in zip file into ``addons/counterstrikesharp/plugins/``

@@ -1,4 +1,5 @@
-﻿using CounterStrikeSharp.API;
+﻿using System.Globalization;
+using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
 using CounterStrikeSharp.API.Core.Capabilities;
@@ -91,8 +92,10 @@ namespace MVP
                 var complete = data.Complete;
                 dateStart = data.TimeAcheived;
                 dateEnd = data.TimeReset;
+                
+                var timeReset = DateTime.ParseExact(data.TimeReset, "M/d/yyyy", CultureInfo.InvariantCulture);
 
-                if (data.TimeReset == DateTime.Today.ToShortDateString())
+                if (timeReset <= DateTime.Today)
                 {
                     complete = false;
                     dateStart = DateTime.Today.ToShortDateString();
